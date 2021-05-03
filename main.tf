@@ -73,5 +73,4 @@ module "linux_vm" {
   asg_id               = azurerm_application_security_group.linux.id
   admin_ssh_public_key = azurerm_ssh_public_key.pls.public_key
   zone                 = trimprefix(each.value, "web")
-  ip_address           = cidrhost("10.0.1.0/24", trimprefix(each.value, "web") + 3)
 }
